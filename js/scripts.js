@@ -24,3 +24,24 @@ function numberOfOccurrencesInText(word, text) {
   });
   return wordCount;
 }
+
+function omitOffensiveWords(text) {
+  let textArray = text.split(" ");
+  let badWords = ['zoinks', 'muppeteer', 'biffaroni', 'loopdaloop'];
+  let badString = badWords.toString();
+  let returnArray = [];
+  
+  textArray.forEach(element => {
+    if (badString.includes(element.toLowerCase()))  {
+      returnArray.push("____");
+    } else  {
+      returnArray.push(element);
+    }
+  });
+  return returnArray.toString(' ');
+}
+
+// function omitZoinks(text) {
+//   let newText = text.replace("zoinks", "___");
+//   return newText;
+// }
