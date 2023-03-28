@@ -38,10 +38,13 @@ function omitOffensiveWords(text) {
       returnArray.push(element);
     }
   });
-  return returnArray.toString(' ');
+  return returnArray.toString(' ').replaceAll(',', ' ');
 }
 
 // function omitZoinks(text) {
 //   let newText = text.replace("zoinks", "___");
 //   return newText;
 // }
+
+// User Interface Logic
+
