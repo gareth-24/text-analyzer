@@ -77,10 +77,25 @@ numberOfOccurrencesInText(word, text);
 Expected Output: 0
 
 Describe: omitOffensiveWords()
+
 Test: "It should omit the offensive words "zoinks, muppeteer, biffaroni, and loopdaloop."
 Code:
 const text = "Zoinks we like to play muppeteer biffaroni on loopdaloop weekends.";
 Expected Output = "____ we like to play ____ ____ on ____ weekends."
+
+
+Describe: mostCommonWords()
+
+Test: "It should count the number of times each word is used."
+Code:
+const text = "Hi there hey yo hi hi yay yo whoa there whoa yay"
+Expected Output:
+const word1Count = 3
+const word2Count = 2
+const word3Count = 1
+const word4Count = 2
+const word5Count = 2
+const word6Count = 2
 
 
 Describe: boldPassage()

@@ -1,10 +1,26 @@
 // Utility Logic
 
-function isEmpty(testString) {
-  return (testString.trim().length === 0);
+function isEmpty() {
+  for (let i=0; i < arguments.length; i++) {
+    if (arguments[i].trim().length === 0) {
+      return true;
+    }
+  }
+  return false;
 }
 
 // Business Logic
+
+function firstInstanceOfWord(word, text) {
+  const textArray = text.split(" ");
+  for (let i = 0; i < textArray.length; i++) {
+    console.log(i);
+    if (word === textArray[i]) {
+      return i;
+    }
+  }
+  return -1;
+}
 
 function wordCounter(text) {
   if (isEmpty(text)) {
@@ -34,6 +50,28 @@ function numberOfOccurrencesInText(word, text) {
   return wordCount;
 }
 
+
+
+//Incomplete function below
+function mostCommonWords(text)  {
+  if (isEmpty(text)) {
+    return 0;
+  }
+  let wordCountArray = [];
+  const textArray = text.split(" ");
+  let word1Count = 0
+  textArray.forEach(function(element, index)  {
+    let word1Count = element;
+    let word1 = element.toString();
+    let word1ccurances = numberOfOccurrencesInText(word1, text);
+    wordCountArray.push(wordCount);
+    console.log(wordCountArray);
+  });
+}
+//Incomplete function above^
+
+
+
 function omitOffensiveWords(text) {
   let textArray = text.split(" ");
   let badWords = ['zoinks', 'muppeteer', 'biffaroni', 'loopdaloop'];
@@ -58,7 +96,7 @@ function omitOffensiveWords(text) {
 // User Interface Logic
 
 function boldPassage(word, text) {
-  if (isEmpty(word) || isEmpty(text)) {
+  if (isEmpty(word, text)) {
     return null;
   }
   const p = document.createElement("p");
